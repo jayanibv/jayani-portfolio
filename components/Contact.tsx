@@ -55,6 +55,11 @@ export default function Contact() {
             >
                 Connect With Me
             </motion.a>
+
+            {/* Footer / Copyright */}
+            <div className="absolute bottom-6 w-full text-center text-gray-500 text-sm">
+                <p>&copy; {new Date().getFullYear()} B Venkata Jayani. All rights reserved.</p>
+            </div>
         </section>
     );
 }

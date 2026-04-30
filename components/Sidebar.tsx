@@ -38,7 +38,7 @@ export default function Sidebar() {
             {/* Profile */}
             <div className="flex flex-col items-center mb-12">
                 <img
-                    src="/profile.jpg"
+                    src="/profile.JPG"
                     alt="profile"
                     className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover 
           border border-purple-500/60 shadow-[0_0_25px_rgba(168,85,247,0.5)]"
