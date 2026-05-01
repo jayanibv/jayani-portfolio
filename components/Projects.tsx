@@ -1,12 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { Playfair_Display } from "next/font/google";
 import { useState } from "react";
-
-const playfair = Playfair_Display({
-    subsets: ["latin"],
-    weight: ["700"],
-});
 
 export default function Projects() {
     const [selected, setSelected] = useState<any>(null);
@@ -23,7 +17,7 @@ export default function Projects() {
             link: "https://github.com/jayanibv/Langchain-Gemini-Chatbot",
         },
         {
-            title: "AI Sales & Voice Agent (Internship Project)",
+            title: "AI Sales & Voice Agent",
             desc: "Developed an AI-powered Sales & HR voice agent using Twilio, ElevenLabs, PostgreSQL, and n8n orchestration. Designed automated conversational workflows with voice synthesis, call handling, and backend database integration.",
         },
         {
@@ -37,7 +31,7 @@ export default function Projects() {
             link: "https://github.com/jayanibv/Resume-Raphsody",
         },
         {
-            title: "Adversarial Federated Personalization – IEEE CICT 2025",
+            title: "Adversarial Federated Personalization",
             desc: "Presented at the 9th IEEE International Conference (CICT 2025), IIITDM Kancheepuram. Focused on defending federated edge models from targeted poisoning attacks while preserving personalization.",
             highlight: true,
         },
@@ -46,16 +40,18 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="relative min-h-screen bg-gradient-to-b from-white to-purple-50 px-8 md:px-40 py-32"
+            className="relative min-h-screen bg-[#000000] px-8 md:px-40 py-32 border-t border-[#00D9C0]/10"
         >
-            <div className="absolute top-20 left-20 w-72 h-72 bg-purple-400/20 blur-[120px] rounded-full"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-[#00D9C0]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-            <h2
-                className={`${playfair.className} text-4xl md:text-5xl font-bold mb-20 text-zinc-900`}
-                style={{ textShadow: "0 0 20px rgba(168,85,247,0.2)" }}
+            <motion.h2
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-20 bg-clip-text text-transparent bg-gradient-to-r from-[#00D9C0] to-[#A78BFA] drop-shadow-sm"
             >
                 Projects & Research
-            </h2>
+            </motion.h2>
 
             <div className="grid md:grid-cols-3 gap-10 relative z-10">
                 {data.map((item, i) => (
@@ -66,51 +62,32 @@ export default function Projects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.12 }}
                         whileHover={{ y: -6 }}
-                        className={`cursor-pointer group relative flex flex-col justify-between
-              h-[320px] p-8 rounded-3xl border transition-all duration-300
-              ${item.highlight
-                                ? "bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-[0_20px_60px_rgba(124,58,237,0.35)]"
-                                : "bg-white border-purple-100 shadow-lg hover:shadow-[0_20px_60px_rgba(168,85,247,0.2)]"
-                            }`}
+                        className="cursor-pointer group relative flex flex-col justify-between h-[320px] p-8 rounded-3xl border border-white/5 bg-[#0D0D0D] transition-all duration-300 hover:border-[#00D9C0]/50 hover:shadow-[0_0_20px_rgba(0,217,192,0.2)]"
                     >
                         {item.highlight && (
-                            <span className="absolute top-4 right-4 text-xs bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+                            <span className="absolute top-4 right-4 text-xs border border-[#A78BFA]/40 text-[#A78BFA] px-3 py-1 rounded-full backdrop-blur-sm">
                                 IEEE CICT 2025
                             </span>
                         )}
 
                         <div>
-                            <h3
-                                className={`text-xl font-semibold transition ${item.highlight
-                                    ? "text-white"
-                                    : "text-zinc-900 group-hover:text-purple-600"
-                                    }`}
-                            >
+                            <h3 className="text-xl font-semibold text-white group-hover:text-[#00D9C0] transition-colors duration-300">
                                 {item.title}
                             </h3>
 
-                            <p
-                                className={`mt-4 text-sm leading-relaxed line-clamp-4 ${item.highlight ? "text-white/90" : "text-gray-600"
-                                    }`}
-                            >
+                            <p className="mt-4 text-sm leading-relaxed line-clamp-4 text-gray-400">
                                 {item.desc}
                             </p>
                         </div>
 
                         {item.link && (
-                            <a
-                                href={item.link}
-                                target="_blank"
-                                onClick={(e) => e.stopPropagation()}
-                                className="mt-6 text-sm font-medium text-purple-600 hover:text-purple-800 transition"
-                            >
+                            <div className="mt-6 text-sm font-medium text-[#00D9C0] hover:text-white transition-colors">
                                 View on GitHub →
-                            </a>
+                            </div>
                         )}
-
-                        {!item.highlight && (
-                            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 opacity-0 group-hover:opacity-100 transition"></div>
-                        )}
+                        
+                        {/* Subtle bottom glow indicator on hover */}
+                        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-[#00D9C0] to-[#A78BFA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-3xl"></div>
                     </motion.div>
                 ))}
             </div>
@@ -120,7 +97,7 @@ export default function Projects() {
                 {selected && (
                     <>
                         <motion.div
-                            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+                            className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -132,16 +109,13 @@ export default function Projects() {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.85, opacity: 0 }}
                             transition={{ type: "spring", stiffness: 220 }}
-                            className="fixed z-50 top-1/2 left-1/2 
-                            -translate-x-1/2 -translate-y-1/2
-                            w-[90%] md:w-[520px] 
-                            bg-white rounded-3xl p-10 shadow-2xl"
+                            className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[520px] bg-[#111111] border border-[#00D9C0]/30 rounded-3xl p-10 shadow-[0_0_50px_rgba(0,217,192,0.15)]"
                         >
-                            <h3 className="text-2xl font-bold text-zinc-900">
+                            <h3 className="text-2xl font-bold text-white mb-6">
                                 {selected.title}
                             </h3>
 
-                            <p className="mt-6 text-gray-700 leading-relaxed">
+                            <p className="text-gray-300 leading-relaxed">
                                 {selected.desc}
                             </p>
 
@@ -149,7 +123,8 @@ export default function Projects() {
                                 <a
                                     href={selected.link}
                                     target="_blank"
-                                    className="inline-block mt-6 text-purple-600 font-medium hover:text-purple-800"
+                                    rel="noreferrer"
+                                    className="inline-block mt-8 text-sm uppercase tracking-widest font-medium text-[#00D9C0] hover:text-white transition-colors"
                                 >
                                     View on GitHub →
                                 </a>
@@ -157,7 +132,7 @@ export default function Projects() {
 
                             <button
                                 onClick={() => setSelected(null)}
-                                className="absolute top-4 right-5 text-gray-500 hover:text-black text-lg"
+                                className="absolute top-6 right-6 text-gray-500 hover:text-[#00D9C0] text-xl transition-colors"
                             >
                                 ✕
                             </button>

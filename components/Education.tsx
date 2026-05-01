@@ -1,34 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
-import { Playfair_Display } from "next/font/google";
-
-const playfair = Playfair_Display({
-    subsets: ["latin"],
-    weight: ["700"],
-});
 
 export default function Education() {
     return (
         <section
             id="education"
-            className="relative min-h-screen bg-gradient-to-b from-white to-purple-50 px-8 md:px-40 py-32 overflow-hidden"
+            className="relative min-h-screen bg-[#0A0A0A] px-8 md:px-40 py-32 overflow-hidden border-t border-[#00D9C0]/10"
         >
             {/* Soft Glow Accent */}
-            <div className="absolute top-24 right-24 w-80 h-80 bg-purple-300/20 blur-[120px] rounded-full"></div>
+            <div className="absolute top-24 right-24 w-80 h-80 bg-[#00D9C0]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
             <motion.h2
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className={`${playfair.className} text-4xl md:text-5xl font-bold mb-20 text-zinc-900`}
-                style={{
-                    textShadow: "0 0 20px rgba(168,85,247,0.15)",
-                }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-20 bg-clip-text text-transparent bg-gradient-to-r from-[#00D9C0] to-[#A78BFA] drop-shadow-sm"
             >
                 Education
             </motion.h2>
 
-            <div className="relative border-l-2 border-purple-400/60 pl-10 space-y-16">
+            <div className="relative border-l-2 border-[#00D9C0]/30 pl-10 space-y-16">
                 {/* Item */}
                 {[
                     {
@@ -58,19 +49,19 @@ export default function Education() {
                         className="relative group"
                     >
                         {/* Timeline Dot */}
-                        <div className="absolute -left-[34px] top-2 w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.7)]"></div>
+                        <div className="absolute -left-[45px] top-4 w-4 h-4 bg-[#00D9C0] rounded-full shadow-[0_0_15px_rgba(0,217,192,0.7)]"></div>
 
                         {/* Card */}
-                        <div className="bg-white rounded-2xl p-8 shadow-md border border-purple-100 hover:shadow-[0_15px_50px_rgba(168,85,247,0.15)] transition-all duration-300">
-                            <h3 className="text-xl md:text-2xl font-semibold text-zinc-900 group-hover:text-purple-600 transition">
+                        <div className="bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-[#00D9C0]/50 hover:shadow-[0_15px_50px_rgba(0,217,192,0.15)] transition-all duration-300">
+                            <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-[#00D9C0] transition-colors duration-300">
                                 {item.title}
                             </h3>
 
-                            <p className="mt-2 text-gray-600 text-sm md:text-base">
-                                {item.school} · {item.year}
+                            <p className="mt-3 text-gray-400 text-sm md:text-base">
+                                {item.school} <span className="mx-2 text-gray-600">·</span> {item.year}
                             </p>
 
-                            <p className="mt-4 text-purple-600 font-medium">
+                            <p className="mt-5 text-[#00D9C0] font-medium tracking-wide">
                                 {item.score}
                             </p>
                         </div>

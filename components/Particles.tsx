@@ -11,12 +11,12 @@ function FloatingParticles() {
 
     const sphere = inSphere(
         new Float32Array(6000),
-        { radius: 1.5 }
+        { radius: 3.5 }
     ) as Float32Array;
 
     useFrame((state) => {
         if (ref.current) {
-            ref.current.rotation.y = state.clock.elapsedTime * 0.03;
+            ref.current.rotation.y = state.clock.elapsedTime * 0.02; // slower drift
         }
     });
 
@@ -24,10 +24,11 @@ function FloatingParticles() {
         <Points ref={ref} positions={sphere} stride={3}>
             <PointMaterial
                 transparent
-                color="#a855f7"
-                size={0.007}
+                color="#ffffff"
+                size={0.006}
                 sizeAttenuation
                 depthWrite={false}
+                opacity={0.9}
             />
         </Points>
     );

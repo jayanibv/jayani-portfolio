@@ -1,5 +1,6 @@
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
+import CursorGlow from "@/components/CursorGlow";
 import {
   Playfair_Display,
   Space_Grotesk,
@@ -44,12 +45,12 @@ export default function RootLayout({
           ${playfair.variable}
           ${greatVibes.variable}
           ${merriweather.variable}
-          flex bg-white
+          bg-[#050505] text-white
         `}
       >
-        <Sidebar />
-
-        <main className="ml-20 md:ml-64 w-full">
+        <CursorGlow />
+        <Navbar />
+        <main className="w-full">
           {children}
         </main>
       </body>
