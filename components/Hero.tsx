@@ -107,7 +107,7 @@ export default function Hero() {
                         className={`${playfair.className} flex flex-col`}
                     >
                         <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-2 tracking-tight drop-shadow-lg">
-                            Hola, I'm
+                            Hello, I'm
                         </span>
                         <span className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight leading-tight md:leading-none pb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#00D9C0] to-[#A78BFA] drop-shadow-[0_0_15px_rgba(0,217,192,0.3)]">
                             B Venkata Jayani

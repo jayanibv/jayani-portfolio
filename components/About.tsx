@@ -44,19 +44,25 @@ export default function About() {
                     <div className="mt-8 bg-[#111111] p-6 rounded-2xl border border-white/5 hover:border-[#00D9C0]/50 hover:shadow-[0_0_15px_rgba(0,217,192,0.3)] transition-all duration-300">
                         <ul className="text-gray-300 space-y-3">
                             <li className="flex items-center gap-3">
-                                <span className="text-[#00D9C0] text-xl">📞</span> 
-                                <span><strong className="text-white">Phone:</strong> +91-8122896968</span>
+                                <span className="text-[#00D9C0] text-xl">📧</span>
+                                <span>
+                                    <strong className="text-white">Email:</strong>{" "}
+                                    <a
+                                        href="https://mail.google.com/mail/?view=cm&to=jayanibv@gmail.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[#00D9C0] hover:text-[#A78BFA] underline underline-offset-2 transition-colors duration-200"
+                                    >
+                                        jayanibv@gmail.com
+                                    </a>
+                                </span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <span className="text-[#00D9C0] text-xl">📧</span> 
-                                <span><strong className="text-white">Email:</strong> jayanibv@gmail.com</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <span className="text-[#00D9C0] text-xl">🎓</span> 
+                                <span className="text-[#00D9C0] text-xl">🎓</span>
                                 <span><strong className="text-white">Degree:</strong> B.Tech in CSE</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <span className="text-[#00D9C0] text-xl">💼</span> 
+                                <span className="text-[#00D9C0] text-xl">💼</span>
                                 <span><strong className="text-white">Location:</strong> Chennai, India</span>
                             </li>
                         </ul>
