@@ -58,14 +58,16 @@ const awardsData = [
         year: "2024-2026",
         type: "Certification",
         desc: [
-            "Software Testing",
-            "Introduction to Internet of Things (IoT)",
-            "Management Information System",
+            "Human Computer Interaction - IIITDelhi",
+            "Introduction to Internet of Things (IoT) - IIT Kharagpur",
+            "Management Information System- IIT Kharagpur",
+            "Software Testing - IIITBangalore",
         ],
         images: [
-            "/certificates/nptel-software-testing.jpg",
+            "/certficates/nptel-hic.png",
             "/certificates/nptel-iot.jpg",
             "/certificates/nptel-mis.jpg",
+            "/certificates/nptel-software-testing.jpg",
         ],
     },
 ];
@@ -131,7 +133,7 @@ export default function Awards() {
                         <p className="mt-4 text-[#00D9C0] font-medium text-sm tracking-wide">
                             {award.year}
                         </p>
-                        
+
                         {/* Subtle bottom glow indicator on hover */}
                         <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-[#00D9C0] to-[#A78BFA] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-3xl"></div>
                     </motion.div>
