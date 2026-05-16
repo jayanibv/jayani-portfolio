@@ -64,7 +64,7 @@ const awardsData = [
             "Software Testing - IIITBangalore",
         ],
         images: [
-            "/certficates/nptel-hic.png",
+            "/certficates/nptel-hci.png",
             "/certificates/nptel-iot.jpg",
             "/certificates/nptel-mis.jpg",
             "/certificates/nptel-software-testing.jpg",
